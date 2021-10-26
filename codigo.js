@@ -8,7 +8,10 @@ alert(`Bienvenido! a tu tienda de Arte Camacho`);
 
 do{
     let option = showMenu();
-    if(option ===( artGallery.length + 1)) break; //Opcion 6 es Salir
+    if(option ===(artGallery.length + 1)){
+        showCart();
+    }
+    if(option ===( artGallery.length + 2)) break; //Opcion 6 es Salir
     let qty = parseInt(prompt(selectedQty));
 
     addToCart(option,qty);
@@ -19,9 +22,8 @@ do{
 
 }while(resp === 'si'); //|| resp === 'SI');se anula por que se escibio toLocaleLowerCase
 
-if(cart > 0){
-    alert(`El total a pagar es ${cart} soles`);
-};
+
+showTotal();
 
 alert("Gracias, disfrute de su coleccion particular y vuelva pronto");
 
